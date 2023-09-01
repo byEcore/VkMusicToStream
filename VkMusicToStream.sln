@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkMusicToStream", "VkMusicToStream\VkMusicToStream.csproj", "{AD82F37C-1618-4E50-BC8C-3A5432623869}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD82F37C-1618-4E50-BC8C-3A5432623869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD82F37C-1618-4E50-BC8C-3A5432623869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD82F37C-1618-4E50-BC8C-3A5432623869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD82F37C-1618-4E50-BC8C-3A5432623869}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94442793-4F55-4C1A-90E2-6DE6E776E760}
+	EndGlobalSection
+EndGlobal
