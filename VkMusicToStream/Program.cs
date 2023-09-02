@@ -8,16 +8,22 @@ internal class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
 
-        Console.WriteLine($"Developer: twitch.tv/danekwild\n");
+        ClearConsole();
         Console.WriteLine("> Login:");
         VkData.Login = Console.ReadLine();
         Console.WriteLine($"> Password:");
         VkData.Password = Console.ReadLine();
-        Console.Clear();
+        ClearConsole();
         Console.WriteLine("> Try auth...");
         await VkAutorization.TryAuth(VkData.Login, VkData.Password);
 
 
         Console.ReadLine();
+    }
+
+    public static void ClearConsole()
+    {
+        Console.Clear();
+        Console.WriteLine($"Developer: twitch.tv/danekwild\n");
     }
 }

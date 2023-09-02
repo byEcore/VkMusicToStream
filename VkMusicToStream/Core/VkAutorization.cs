@@ -18,21 +18,21 @@ namespace VkMusicToStream.Core
                     Settings = Settings.All,
                     TwoFactorAuthorization = () =>
                     {
-                        Console.Clear();
+                        Program.ClearConsole();
                         Console.WriteLine("> Enter 2FA Code:");
                         return Console.ReadLine();
                     }                    
                 });
 
-                Console.Clear();
+                Program.ClearConsole();
                 var result = await VkData.vkApi.Account.GetProfileInfoAsync();
                 Console.WriteLine($"> Hello, {result.FirstName} {result.LastName}!\n");
                 await AudioStatus.Get();
             }
             catch (Exception e)
             {
-                Console.Clear();
-                Console.WriteLine($"Auth Error: {e.Message}");
+                Program.ClearConsole();
+                Console.WriteLine($"Auth Exception: {e.Message}");
             }
         }
     }

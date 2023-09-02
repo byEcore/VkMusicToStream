@@ -14,15 +14,13 @@ namespace VkMusicToStream.Core
             }
             catch (Exception e)
             {
-                Console.Clear();
+                Program.ClearConsole();
                 Console.WriteLine($"> Get Audio Status Exception: {e.Message}");
             }
         }
 
         private static async void Start()
-        {
-            if (!VkData.vkApi.IsAuthorized) return;
-
+        {            
             while (true)
             {
                 await Logic();
@@ -33,11 +31,13 @@ namespace VkMusicToStream.Core
 
         private static async Task Logic()
         {
+            if (!VkData.vkApi.IsAuthorized) return;
+
             var profileId = VkData.vkApi.UserId;
             var status = await VkData.vkApi.Status.GetAsync((long)profileId);
             if (status.Audio == null)
             {
-                Console.Clear();
+                Program.ClearConsole();
                 Console.WriteLine($"> Audio status is null!");
                 VkData.NowPlayed = null;
 
@@ -50,7 +50,7 @@ namespace VkMusicToStream.Core
             if (VkData.NowPlayed == $"{status.Audio.Artist} - {status.Audio.Title}") return;
             //
             VkData.NowPlayed = $"{status.Audio.Artist} - {status.Audio.Title}";
-            Console.Clear();
+            Program.ClearConsole();
             Console.WriteLine($"Now played: {status.Audio.Artist} - {status.Audio.Title}");
             File.WriteAllText(@"audio.txt", $"{status.Audio.Artist} - {status.Audio.Title}    ");
         }
